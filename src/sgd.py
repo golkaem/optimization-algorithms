@@ -25,7 +25,7 @@ def sgd(
 
     Returns
     -------
-    List[Array]
+    x_vals: List[Array]
         Trajectory of iterates x_k.
     """
 
