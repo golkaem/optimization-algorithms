@@ -1,14 +1,15 @@
 import numpy as np
-from typing import  Callable, List
+from typing import Callable, List
 from mytypes import Array
+
 
 def polyak_standard_params(L, mu):
     """
     Compute standard Polyak heavy-ball parameters.
     """
-    alpha = 4.0 / ( (np.sqrt(L) + np.sqrt(mu)) ** 2 )
+    alpha = 4.0 / ((np.sqrt(L) + np.sqrt(mu)) ** 2)
     beta = ((np.sqrt(L) - np.sqrt(mu)) / (np.sqrt(L) + np.sqrt(mu))) ** 2
-    return alpha, beta 
+    return alpha, beta
 
 
 def heavy_ball(
@@ -16,7 +17,7 @@ def heavy_ball(
     x0: Array,
     T: int,
     alpha: float,
-    beta: float
+    beta: float,
 ) -> List[Array]:
     """
     Polyak's heavy ball method.
